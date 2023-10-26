@@ -12,6 +12,8 @@ app.engine('mustache', mustacheExpress())
 app.set('view engine', 'mustache')
 app.set('views', __dirname + '/src/view')
 
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
 app.get('/', homeRouter)
 
 app.listen(3000, () => {
